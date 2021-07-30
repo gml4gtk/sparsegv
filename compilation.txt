@@ -1,0 +1,2965 @@
+:)
+cd src && make all
+  CC      sparsegv.o
+sparsegv.c: In function ‘graph_ep’:
+sparsegv.c:210:10: warning: passing argument 1 of ‘strcpy’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ p=strcpy(p,sname); /* file name */
+          ^
+In file included from sparsegv.c:31:
+/usr/include/string.h:121:14: note: expected ‘char * restrict’ but argument is of type ‘const char *’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+sparsegv.c:211:10: warning: passing argument 1 of ‘strcat’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ p=strcat(p,".");
+          ^
+In file included from sparsegv.c:31:
+/usr/include/string.h:129:14: note: expected ‘char * restrict’ but argument is of type ‘const char *’
+ extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+sparsegv.c:212:10: warning: passing argument 1 of ‘strcat’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ p=strcat(p,fname); /* function name */
+          ^
+In file included from sparsegv.c:31:
+/usr/include/string.h:129:14: note: expected ‘char * restrict’ but argument is of type ‘const char *’
+ extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+sparsegv.c:213:10: warning: passing argument 1 of ‘strcat’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ p=strcat(p,".gv");
+          ^
+In file included from sparsegv.c:31:
+/usr/include/string.h:129:14: note: expected ‘char * restrict’ but argument is of type ‘const char *’
+ extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+sparsegv.c:218:7: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  free(fn);
+       ^~
+In file included from sparsegv.c:29:
+/usr/include/stdlib.h:563:25: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+                   ~~~~~~^~~~~
+sparsegv.c:295:6: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ free(fn);
+      ^~
+In file included from sparsegv.c:29:
+/usr/include/stdlib.h:563:25: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+                   ~~~~~~^~~~~
+  CC      allocate.o
+  CC      builtin.o
+builtin.c: In function ‘expand_expect’:
+builtin.c:123:55: warning: unused parameter ‘cost’ [-Wunused-parameter]
+ static int expand_expect(struct expression *expr, int cost)
+                                                   ~~~~^~~~
+builtin.c: In function ‘expand_warning’:
+builtin.c:136:56: warning: unused parameter ‘cost’ [-Wunused-parameter]
+ static int expand_warning(struct expression *expr, int cost)
+                                                    ~~~~^~~~
+builtin.c: In function ‘expand_object_size’:
+builtin.c:577:10: warning: comparison of integer expressions of different signedness: ‘long unsigned int’ and ‘int’ [-Wsign-compare]
+  if (val == -1)
+          ^~
+builtin.c:529:60: warning: unused parameter ‘cost’ [-Wunused-parameter]
+ static int expand_object_size(struct expression *expr, int cost)
+                                                        ~~~~^~~~
+builtin.c: At top level:
+builtin.c:643:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__atomic_always_lock_free", &bool_ctype, 0, { size_t_ctype, vol_ptr} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:645:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__atomic_clear", &void_ctype, 0, { &volatile_bool_ptr_ctype, &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:658:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__atomic_is_lock_free", &bool_ctype, 0, { size_t_ctype, vol_ptr} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:663:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__atomic_signal_fence", &void_ctype, 0, { &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:667:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__atomic_test_and_set", &bool_ctype, 0, { vol_ptr, &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:668:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__atomic_thread_fence", &void_ctype, 0, { &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:676:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_abort", &void_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:677:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_abs", &int_ctype, 0, { &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:680:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alloca", &ptr_ctype, 0, { size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:681:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_bcmp", &int_ctype, 0, { &const_ptr_ctype, &const_ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:682:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_bcopy", &void_ctype, 0, { &const_ptr_ctype, &ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:686:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_bzero", &void_ctype, 0, { &ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:687:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_calloc", &ptr_ctype, 0, { size_t_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:697:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_exit", &void_ctype, 0, { &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:698:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_extract_return_addr", &ptr_ctype, 0, { &ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:699:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_fabs", &double_ctype, 0, { &double_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:703:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_fma", &double_ctype, 0, { &double_ctype, &double_ctype, &double_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:704:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_fmaf", &float_ctype, 0, { &float_ctype, &float_ctype, &float_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:705:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_fmal", &ldouble_ctype, 0, { &ldouble_ctype, &ldouble_ctype, &ldouble_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:706:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_frame_address", &ptr_ctype, 0, { &uint_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:707:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_free", &void_ctype, 0, { &ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:708:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_huge_val", &double_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:709:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_huge_valf", &float_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:710:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_huge_vall", &ldouble_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:711:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_index", &string_ctype, 0, { &const_string_ctype, &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:712:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_inf", &double_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:713:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_inff", &float_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:714:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_infl", &ldouble_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:717:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_isgreater", &int_ctype, 0, { &float_ctype, &float_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:718:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_isgreaterequal", &int_ctype, 0, { &float_ctype, &float_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:721:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_isless", &int_ctype, 0, { &float_ctype, &float_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:722:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_islessequal", &int_ctype, 0, { &float_ctype, &float_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:723:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_islessgreater", &int_ctype, 0, { &float_ctype, &float_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:726:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_isunordered", &int_ctype, 0, { &float_ctype, &float_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:727:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_labs", &long_ctype, 0, { &long_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:728:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_llabs", &llong_ctype, 0, { &llong_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:729:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_malloc", &ptr_ctype, 0, { size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:730:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_memchr", &ptr_ctype, 0, { &const_ptr_ctype, &int_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:731:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_memcmp", &int_ctype, 0, { &const_ptr_ctype, &const_ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:732:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_memcpy", &ptr_ctype, 0, { &ptr_ctype, &const_ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:733:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_memmove", &ptr_ctype, 0, { &ptr_ctype, &const_ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:734:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_mempcpy", &ptr_ctype, 0, { &ptr_ctype, &const_ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:735:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_memset", &ptr_ctype, 0, { &ptr_ctype, &int_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:738:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_nan", &double_ctype, 0, { &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:739:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_nanf", &float_ctype, 0, { &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:740:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_nanl", &ldouble_ctype, 0, { &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:748:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_prefetch", &void_ctype, 1, { &const_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:749:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_printf", &int_ctype, 1, { &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:750:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_puts", &int_ctype, 0, { &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:751:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_realloc", &ptr_ctype, 0, { &ptr_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:752:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_return_address", &ptr_ctype, 0, { &uint_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:753:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_rindex", &string_ctype, 0, { &const_string_ctype, &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:754:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_sadd_overflow", &bool_ctype, 0, { &int_ctype, &int_ctype, &int_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:755:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_saddl_overflow", &bool_ctype, 0, { &long_ctype, &long_ctype, &long_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:756:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_saddll_overflow", &bool_ctype, 0, { &llong_ctype, &llong_ctype, &llong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:758:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_smul_overflow", &bool_ctype, 0, { &int_ctype, &int_ctype, &int_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:759:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_smull_overflow", &bool_ctype, 0, { &long_ctype, &long_ctype, &long_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:760:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_smulll_overflow", &bool_ctype, 0, { &llong_ctype, &llong_ctype, &llong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:761:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_snprintf", &int_ctype, 1, { &string_ctype, size_t_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:762:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_sprintf", &int_ctype, 1, { &string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:763:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_ssub_overflow", &bool_ctype, 0, { &int_ctype, &int_ctype, &int_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:764:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_ssubl_overflow", &bool_ctype, 0, { &long_ctype, &long_ctype, &long_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:765:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_ssubll_overflow", &bool_ctype, 0, { &llong_ctype, &llong_ctype, &llong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:766:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_stpcpy", &string_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:767:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_stpncpy", &string_ctype, 0, { &const_string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:768:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strcasecmp", &int_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:769:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strcasestr", &string_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:770:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strcat", &string_ctype, 0, { &string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:771:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strchr", &string_ctype, 0, { &const_string_ctype, &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:772:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strcmp", &int_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:773:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strcpy", &string_ctype, 0, { &string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:774:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strcspn", size_t_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:775:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strdup", &string_ctype, 0, { &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:776:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strlen", size_t_ctype, 0, { &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:777:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strncasecmp", &int_ctype, 0, { &const_string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:778:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strncat", &string_ctype, 0, { &string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:779:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strncmp", &int_ctype, 0, { &const_string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:780:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strncpy", &string_ctype, 0, { &string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:781:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strndup", &string_ctype, 0, { &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:782:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strnstr", &string_ctype, 0, { &const_string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:783:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strpbrk", &string_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:784:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strrchr", &string_ctype, 0, { &const_string_ctype, &int_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:785:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strspn", size_t_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:786:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_strstr", &string_ctype, 0, { &const_string_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:789:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_trap", &void_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:790:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_uadd_overflow", &bool_ctype, 0, { &uint_ctype, &uint_ctype, &uint_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:791:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_uaddl_overflow", &bool_ctype, 0, { &ulong_ctype, &ulong_ctype, &ulong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:792:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_uaddll_overflow", &bool_ctype, 0, { &ullong_ctype, &ullong_ctype, &ullong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:793:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_umul_overflow", &bool_ctype, 0, { &uint_ctype, &uint_ctype, &uint_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:794:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_umull_overflow", &bool_ctype, 0, { &ulong_ctype, &ulong_ctype, &ulong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:795:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_umulll_overflow", &bool_ctype, 0, { &ullong_ctype, &ullong_ctype, &ullong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:796:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_unreachable", &void_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:797:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_usub_overflow", &bool_ctype, 0, { &uint_ctype, &uint_ctype, &uint_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:798:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_usubl_overflow", &bool_ctype, 0, { &ulong_ctype, &ulong_ctype, &ulong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:799:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_usubll_overflow", &bool_ctype, 0, { &ullong_ctype, &ullong_ctype, &ullong_ptr_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:800:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_va_arg_pack_len", size_t_ctype, 0 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+builtin.c:801:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_vprintf", &int_ctype, 0, { &const_string_ctype, va_list_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:802:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_vsnprintf", &int_ctype, 0, { &string_ctype, size_t_ctype, &const_string_ctype, va_list_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:803:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_vsprintf", &int_ctype, 0, { &string_ctype, &const_string_ctype, va_list_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:805:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___memcpy_chk", &ptr_ctype, 0, { &ptr_ctype, &const_ptr_ctype, size_t_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:806:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___memmove_chk", &ptr_ctype, 0, { &ptr_ctype, &const_ptr_ctype, size_t_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:807:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___mempcpy_chk", &ptr_ctype, 0, { &ptr_ctype, &const_ptr_ctype, size_t_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:808:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___memset_chk", &ptr_ctype, 0, { &ptr_ctype, &int_ctype, size_t_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:810:3: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+   { &string_ctype, size_t_ctype, &int_ctype, size_t_ctype, &const_string_ctype} },
+   ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:811:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___sprintf_chk", &int_ctype, 1, { &string_ctype, &int_ctype, size_t_ctype, &const_string_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:812:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___stpcpy_chk", &string_ctype, 0, { &string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:813:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___strcat_chk", &string_ctype, 0, { &string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:814:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___strcpy_chk", &string_ctype, 0, { &string_ctype, &const_string_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:815:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___strncat_chk", &string_ctype, 0, { &string_ctype, &const_string_ctype, size_t_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:816:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin___strncpy_chk", &string_ctype, 0, { &string_ctype, &const_string_ctype, size_t_ctype, size_t_ctype} },
+  ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:818:3: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+   { &string_ctype, size_t_ctype, &int_ctype, size_t_ctype, &const_string_ctype, va_list_ctype} },
+   ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:820:3: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+   { &string_ctype, &int_ctype, size_t_ctype, &const_string_ctype, va_list_ctype} },
+   ^
+In file included from builtin.c:26:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+builtin.c:836:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__sync_synchronize", &void_ctype, 1 },
+  ^
+In file included from builtin.c:26:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+  CC      char.o
+char.c: In function ‘get_string_constant’:
+char.c:125:12: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    is_wide = 1;
+    ~~~~~~~~^~~
+char.c:126:3: note: here
+   case TOKEN_STRING:
+   ^~~~
+  CC      compat-linux.o
+  CC      cse.o
+cse.c: In function ‘try_to_cse’:
+cse.c:326:58: warning: unused parameter ‘ep’ [-Wunused-parameter]
+ static struct instruction *try_to_cse(struct entrypoint *ep, struct instruction *i1, struct instruction *i2)
+                                       ~~~~~~~~~~~~~~~~~~~^~
+cse.c: In function ‘insn_compare’:
+cse.c:201:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (i1->src3 != i2->src3)
+      ^
+cse.c:206:2: note: here
+  case OP_SUB:
+  ^~~~
+cse.c:232:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (i1->src2 != i2->src2)
+      ^
+cse.c:237:2: note: here
+  case OP_NOT:
+  ^~~~
+  CC      dissect.o
+dissect.c: In function ‘examine_sym_node’:
+dissect.c:214:4: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    do_expression(U_R_VAL, base->array_size);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dissect.c:215:3: note: here
+   case SYM_PTR:
+   ^~~~
+dissect.c: In function ‘do_expression’:
+dissect.c:422:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      mode |= U_W_VAL | U_R_VAL;
+dissect.c:423:5: note: here
+     default:
+     ^~~~~~~
+dissect.c:424:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      mode |= u_rval(mode);
+           ^~
+dissect.c:425:5: note: here
+     case '(':
+     ^~~~
+dissect.c: In function ‘fix_mode’:
+dissect.c:92:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (!type->ctype.base_type)
+      ^
+dissect.c:94:2: note: here
+  case SYM_ENUM:
+  ^~~~
+  CC      dominate.o
+  CC      evaluate.o
+evaluate.c: In function ‘restricted_value’:
+evaluate.c:413:66: warning: unused parameter ‘type’ [-Wunused-parameter]
+ static int restricted_value(struct expression *v, struct symbol *type)
+                                                   ~~~~~~~~~~~~~~~^~~~
+evaluate.c: In function ‘restricted_binop’:
+evaluate.c:422:52: warning: unused parameter ‘type’ [-Wunused-parameter]
+ static int restricted_binop(int op, struct symbol *type)
+                                     ~~~~~~~~~~~~~~~^~~~
+evaluate.c: In function ‘convert_to_as_mod’:
+evaluate.c:1619:50: warning: comparison of integer expressions of different signedness: ‘long unsigned int’ and ‘int’ [-Wsign-compare]
+  if (sym->ctype.as != as || sym->ctype.modifiers != mod) {
+                                                  ^~
+evaluate.c: In function ‘check_designators’:
+evaluate.c:2428:16: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+     if (offset >= ctype->bit_size) {
+                ^~
+evaluate.c: In function ‘next_designators’:
+evaluate.c:2492:54: warning: comparison of integer expressions of different signedness: ‘long unsigned int’ and ‘int’ [-Wsign-compare]
+    if (array_element_offset(old->ctype->bit_size, n) == ctype->bit_size) {
+                                                      ^~
+evaluate.c: In function ‘handle_initializer’:
+evaluate.c:2788:22: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+   if (size_with_null < type->bit_size)
+                      ^
+evaluate.c:2790:44: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+   else if (Winit_cstring && size_with_null == type->bit_size) {
+                                            ^~
+evaluate.c: In function ‘degenerate’:
+evaluate.c:1683:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (expr->type == EXPR_SLICE) {
+      ^
+evaluate.c:1725:2: note: here
+  case SYM_FN:
+  ^~~~
+evaluate.c: In function ‘restricted_binop_type’:
+evaluate.c:492:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    if (!(lclass & rclass & TYPE_FOULED))
+       ^
+evaluate.c:494:3: note: here
+   case 0:
+   ^~~~
+evaluate.c: In function ‘evaluate_ptrsizeof’:
+evaluate.c:2259:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (type)
+      ^
+evaluate.c:2261:2: note: here
+  default:
+  ^~~~~~~
+  CC      expand.o
+expand.c: In function ‘simplify_float_cmp’:
+expand.c:438:71: warning: unused parameter ‘ctype’ [-Wunused-parameter]
+ static int simplify_float_cmp(struct expression *expr, struct symbol *ctype)
+                                                        ~~~~~~~~~~~~~~~^~~~~
+expand.c: In function ‘constant_symbol_value’:
+expand.c:750:27: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+    if (entry->init_offset < offset)
+                           ^
+expand.c:752:27: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+    if (entry->init_offset > offset)
+                           ^
+  CC      expression.o
+expression.c: In function ‘unary_expression’:
+expression.c:665:18: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+    for (i = 0; i < ARRAY_SIZE(type_information); i++) {
+                  ^
+expression.c: In function ‘assignment_expression’:
+expression.c:899:17: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   for (i = 0; i < ARRAY_SIZE(assignments); i++)
+                 ^
+expression.c: In function ‘builtin_offsetof_expr’:
+expression.c:202:10: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    *tree = expr;
+    ~~~~~~^~~~~~
+expression.c:203:3: note: here
+   default:
+   ^~~~~~~
+  CC      flow.o
+  CC      flowgraph.o
+In file included from flowgraph.c:11:
+flowgraph.c: In function ‘domtree_build’:
+flowgraph.c:133:29: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  assert(entry->postorder_nr == size - 1);
+                             ^~
+  CC      inline.o
+inline.c: In function ‘copy_expression’:
+inline.c:158:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (expr->cast_expression->type == EXPR_INITIALIZER) {
+      ^
+inline.c:167:2: note: here
+  case EXPR_FORCE_CAST:
+  ^~~~
+  CC      ir.o
+  CC      lib.o
+lib.c: In function ‘show_include_chain’:
+lib.c:85:29: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   if (pretty_len + len + 20 > sizeof(buffer)) {
+                             ^
+lib.c: In function ‘do_error’:
+lib.c:164:13: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  if (errors > fmax_errors) {
+             ^
+lib.c: In function ‘sparse_initialize’:
+lib.c:374:43: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ struct symbol_list *sparse_initialize(int argc, char **argv, struct string_list **filelist)
+                                       ~~~~^~~~
+  CC      linearize.o
+linearize.c: In function ‘show_instruction’:
+linearize.c:318:13: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  if (opcode < ARRAY_SIZE(opcodes)) {
+             ^
+linearize.c: In function ‘linearize_unreachable’:
+linearize.c:2663:81: warning: unused parameter ‘exp’ [-Wunused-parameter]
+ static pseudo_t linearize_unreachable(struct entrypoint *ep, struct expression *exp)
+                                                              ~~~~~~~~~~~~~~~~~~~^~~
+linearize.c: At top level:
+linearize.c:2675:2: warning: missing initializer for field ‘op’ of ‘struct sym_init’ [-Wmissing-field-initializers]
+  { "__builtin_fma", linearize_fma },
+  ^
+linearize.c:2672:19: note: ‘op’ declared here
+  struct symbol_op op;
+                   ^~
+linearize.c:2676:2: warning: missing initializer for field ‘op’ of ‘struct sym_init’ [-Wmissing-field-initializers]
+  { "__builtin_fmaf", linearize_fma },
+  ^
+linearize.c:2672:19: note: ‘op’ declared here
+  struct symbol_op op;
+                   ^~
+linearize.c:2677:2: warning: missing initializer for field ‘op’ of ‘struct sym_init’ [-Wmissing-field-initializers]
+  { "__builtin_fmal", linearize_fma },
+  ^
+linearize.c:2672:19: note: ‘op’ declared here
+  struct symbol_op op;
+                   ^~
+linearize.c:2678:2: warning: missing initializer for field ‘op’ of ‘struct sym_init’ [-Wmissing-field-initializers]
+  { "__builtin_isdigit", linearize_isdigit },
+  ^
+linearize.c:2672:19: note: ‘op’ declared here
+  struct symbol_op op;
+                   ^~
+linearize.c:2679:2: warning: missing initializer for field ‘op’ of ‘struct sym_init’ [-Wmissing-field-initializers]
+  { "__builtin_unreachable", linearize_unreachable },
+  ^
+linearize.c:2672:19: note: ‘op’ declared here
+  struct symbol_op op;
+                   ^~
+  CC      liveness.o
+liveness.c: In function ‘death_def’:
+liveness.c:294:43: warning: unused parameter ‘bb’ [-Wunused-parameter]
+ static void death_def(struct basic_block *bb, pseudo_t pseudo)
+                       ~~~~~~~~~~~~~~~~~~~~^~
+liveness.c:294:56: warning: unused parameter ‘pseudo’ [-Wunused-parameter]
+ static void death_def(struct basic_block *bb, pseudo_t pseudo)
+                                               ~~~~~~~~~^~~~~~
+liveness.c: In function ‘death_use’:
+liveness.c:298:43: warning: unused parameter ‘bb’ [-Wunused-parameter]
+ static void death_use(struct basic_block *bb, pseudo_t pseudo)
+                       ~~~~~~~~~~~~~~~~~~~~^~
+  CC      memops.o
+  CC      opcode.o
+  CC      optimize.o
+  CC      options.o
+options.c: In function ‘handle_switch_setval’:
+options.c:309:45: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static int handle_switch_setval(const char *arg, const char *opt, const struct flag *flag, int options)
+                                 ~~~~~~~~~~~~^~~
+options.c:309:62: warning: unused parameter ‘opt’ [-Wunused-parameter]
+ static int handle_switch_setval(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                  ~~~~~~~~~~~~^~~
+options.c:309:96: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_switch_setval(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                                            ~~~~^~~~~~~
+options.c: In function ‘handle_ftabstop’:
+options.c:413:81: warning: unused parameter ‘flag’ [-Wunused-parameter]
+ static int handle_ftabstop(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                              ~~~~~~~~~~~~~~~~~~~^~~~
+options.c:413:91: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_ftabstop(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                                       ~~~~^~~~~~~
+options.c: In function ‘handle_fpasses’:
+options.c:429:39: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static int handle_fpasses(const char *arg, const char *opt, const struct flag *flag, int options)
+                           ~~~~~~~~~~~~^~~
+options.c: In function ‘handle_fdiagnostic_prefix’:
+options.c:460:50: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static int handle_fdiagnostic_prefix(const char *arg, const char *opt, const struct flag *flag, int options)
+                                      ~~~~~~~~~~~~^~~
+options.c:460:91: warning: unused parameter ‘flag’ [-Wunused-parameter]
+ static int handle_fdiagnostic_prefix(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                        ~~~~~~~~~~~~~~~~~~~^~~~
+options.c:460:101: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_fdiagnostic_prefix(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                                                 ~~~~^~~~~~~
+options.c: In function ‘handle_fdump_ir’:
+options.c:474:81: warning: unused parameter ‘flag’ [-Wunused-parameter]
+ static int handle_fdump_ir(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                              ~~~~~~~~~~~~~~~~~~~^~~~
+options.c:474:91: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_fdump_ir(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                                       ~~~~^~~~~~~
+options.c: In function ‘handle_fmemcpy_max_count’:
+options.c:487:90: warning: unused parameter ‘flag’ [-Wunused-parameter]
+ static int handle_fmemcpy_max_count(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                       ~~~~~~~~~~~~~~~~~~~^~~~
+options.c:487:100: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_fmemcpy_max_count(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                                                ~~~~^~~~~~~
+options.c: In function ‘handle_fmax_errors’:
+options.c:493:84: warning: unused parameter ‘flag’ [-Wunused-parameter]
+ static int handle_fmax_errors(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                 ~~~~~~~~~~~~~~~~~~~^~~~
+options.c:493:94: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_fmax_errors(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                                          ~~~~^~~~~~~
+options.c: In function ‘handle_fmax_warnings’:
+options.c:499:86: warning: unused parameter ‘flag’ [-Wunused-parameter]
+ static int handle_fmax_warnings(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                   ~~~~~~~~~~~~~~~~~~~^~~~
+options.c:499:96: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_fmax_warnings(const char *arg, const char *opt, const struct flag *flag, int options)
+                                                                                            ~~~~^~~~~~~
+options.c: At top level:
+options.c:506:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "diagnostic-prefix", NULL, handle_fdiagnostic_prefix },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:507:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "dump-ir", NULL, handle_fdump_ir },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:508:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "freestanding", &fhosted, NULL, OPT_INVERSE },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:509:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "hosted", &fhosted },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:510:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "linearize", NULL, handle_fpasses, PASS_LINEARIZE },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:511:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "max-errors=", NULL, handle_fmax_errors },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:512:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "max-warnings=", NULL, handle_fmax_warnings },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:513:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "mem-report", &fmem_report },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:514:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "memcpy-max-count=", NULL, handle_fmemcpy_max_count },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:515:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "tabstop=", NULL, handle_ftabstop },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:516:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "mem2reg", NULL, handle_fpasses, PASS_MEM2REG },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:517:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "optim", NULL, handle_fpasses, PASS_OPTIM },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:518:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "pic", &fpic, handle_switch_setval, 1 },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:519:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "PIC", &fpic, handle_switch_setval, 2 },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:520:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "pie", &fpie, handle_switch_setval, 1 },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:521:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "PIE", &fpie, handle_switch_setval, 2 },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:522:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "signed-bitfields", &funsigned_bitfields, NULL, OPT_INVERSE },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:523:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "unsigned-bitfields", &funsigned_bitfields, NULL, },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:524:2: warning: missing initializer for field ‘val’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "signed-char", &funsigned_char, NULL, OPT_INVERSE },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:525:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "short-wchar", &fshort_wchar },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:526:2: warning: missing initializer for field ‘mask’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "unsigned-char", &funsigned_char, NULL, },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c: In function ‘handle_base_dir’:
+options.c:546:37: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static char **handle_base_dir(char *arg, char **next)
+                               ~~~~~~^~~
+options.c: In function ‘handle_march’:
+options.c:619:37: warning: unused parameter ‘opt’ [-Wunused-parameter]
+ static int handle_march(const char *opt, const char *arg, const struct flag *flag, int options)
+                         ~~~~~~~~~~~~^~~
+options.c:619:78: warning: unused parameter ‘flag’ [-Wunused-parameter]
+ static int handle_march(const char *opt, const char *arg, const struct flag *flag, int options)
+                                                           ~~~~~~~~~~~~~~~~~~~^~~~
+options.c:619:88: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_march(const char *opt, const char *arg, const struct flag *flag, int options)
+                                                                                    ~~~~^~~~~~~
+options.c: In function ‘handle_mcmodel’:
+options.c:626:90: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_mcmodel(const char *opt, const char *arg, const struct flag *flag, int options)
+                                                                                      ~~~~^~~~~~~
+options.c: In function ‘handle_mfloat_abi’:
+options.c:647:3: warning: missing initializer for field ‘val’ of ‘const struct val_map’ [-Wmissing-field-initializers]
+   { "?" },
+   ^
+options.c:154:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:641:93: warning: unused parameter ‘options’ [-Wunused-parameter]
+ static int handle_mfloat_abi(const char *opt, const char *arg, const struct flag *flag, int options)
+                                                                                         ~~~~^~~~~~~
+options.c: In function ‘handle_multiarch_dir’:
+options.c:652:42: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static char **handle_multiarch_dir(char *arg, char **next)
+                                    ~~~~~~^~~
+options.c: At top level:
+options.c:667:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "size-long", &arch_msize_long },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:668:2: warning: missing initializer for field ‘mask’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "arch=", NULL, handle_march },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:669:2: warning: missing initializer for field ‘mask’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "big-endian", &arch_big_endian, NULL },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:670:2: warning: missing initializer for field ‘val’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "little-endian", &arch_big_endian, NULL, OPT_INVERSE },
+  ^
+options.c:231:6: note: ‘val’ declared here
+  int val;
+      ^~~
+options.c:671:2: warning: missing initializer for field ‘mask’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "cmodel", &arch_cmodel, handle_mcmodel },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c:672:2: warning: missing initializer for field ‘mask’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "float-abi", &arch_fp_abi, handle_mfloat_abi },
+  ^
+options.c:230:16: note: ‘mask’ declared here
+  unsigned long mask;
+                ^~~~
+options.c: In function ‘handle_nostdinc’:
+options.c:689:37: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static char **handle_nostdinc(char *arg, char **next)
+                               ~~~~~~^~~
+options.c: At top level:
+options.c:786:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "compound", &dbg_compound },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:787:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "dead", &dbg_dead },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:788:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "domtree", &dbg_domtree },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:789:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "entry", &dbg_entry },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:790:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "ir", &dbg_ir },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:791:2: warning: missing initializer for field ‘fun’ of ‘struct flag’ [-Wmissing-field-initializers]
+  { "postorder", &dbg_postorder },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:814:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "address", &Waddress },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:815:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "address-space", &Waddress_space },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:816:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "bitwise", &Wbitwise },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:817:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "bitwise-pointer", &Wbitwise_pointer },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:818:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "cast-from-as", &Wcast_from_as },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:819:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "cast-to-as", &Wcast_to_as },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:820:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "cast-truncate", &Wcast_truncate },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:821:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "constant-suffix", &Wconstant_suffix },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:822:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "constexpr-not-const", &Wconstexpr_not_const },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:823:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "context", &Wcontext },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:824:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "decl", &Wdecl },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:825:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "declaration-after-statement", &Wdeclarationafterstatement },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:826:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "default-bitfield-sign", &Wdefault_bitfield_sign },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:827:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "designated-init", &Wdesignated_init },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:828:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "do-while", &Wdo_while },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:829:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "enum-mismatch", &Wenum_mismatch },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:830:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "external-function-has-definition", &Wexternal_function_has_definition },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:831:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "flexible-array-array", &Wflexible_array_array },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:832:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "flexible-array-nested", &Wflexible_array_nested },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:833:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "flexible-array-sizeof", &Wflexible_array_sizeof },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:834:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "flexible-array-union", &Wflexible_array_union },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:835:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "implicit-int", &Wimplicit_int },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:836:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "init-cstring", &Winit_cstring },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:837:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "int-to-pointer-cast", &Wint_to_pointer_cast },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:838:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "memcpy-max-count", &Wmemcpy_max_count },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:839:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "non-pointer-null", &Wnon_pointer_null },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:840:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "newline-eof", &Wnewline_eof },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:841:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "old-initializer", &Wold_initializer },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:842:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "old-style-definition", &Wold_style_definition },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:843:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "one-bit-signed-bitfield", &Wone_bit_signed_bitfield },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:844:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "override-init", &Woverride_init },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:845:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "override-init-all", &Woverride_init_all },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:846:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "paren-string", &Wparen_string },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:847:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "past-deep-designator", &Wpast_deep_designator },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:848:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "pedantic", &Wpedantic },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:849:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "pointer-to-int-cast", &Wpointer_to_int_cast },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:850:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "ptr-subtraction-blows", &Wptr_subtraction_blows },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:851:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "return-void", &Wreturn_void },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:852:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "shadow", &Wshadow },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:853:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "shift-count-negative", &Wshift_count_negative },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:854:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "shift-count-overflow", &Wshift_count_overflow },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:855:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "sizeof-bool", &Wsizeof_bool },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:856:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "strict-prototypes", &Wstrict_prototypes },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:857:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "pointer-arith", &Wpointer_arith },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:858:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "sparse-error", &Wsparse_error },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:859:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "tautological-compare", &Wtautological_compare },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:860:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "transparent-union", &Wtransparent_union },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:861:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "typesign", &Wtypesign },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:862:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "undef", &Wundef },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:863:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "uninitialized", &Wuninitialized },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:864:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "union-cast", &Wunion_cast },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:865:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "universal-initializer", &Wuniversal_initializer },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:866:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "unknown-attribute", &Wunknown_attribute },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c:867:2: warning: missing initializer for field ‘fun’ of ‘const struct flag’ [-Wmissing-field-initializers]
+  { "vla", &Wvla },
+  ^
+options.c:229:8: note: ‘fun’ declared here
+  int (*fun)(const char *arg, const char *opt, const struct flag *, int options);
+        ^~~
+options.c: In function ‘handle_switch_x’:
+options.c:906:37: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static char **handle_switch_x(char *arg, char **next)
+                               ~~~~~~^~~
+options.c: In function ‘handle_version’:
+options.c:954:36: warning: unused parameter ‘arg’ [-Wunused-parameter]
+ static char **handle_version(char *arg, char **next)
+                              ~~~~~~^~~
+options.c:954:48: warning: unused parameter ‘next’ [-Wunused-parameter]
+ static char **handle_version(char *arg, char **next)
+                                         ~~~~~~~^~~~
+options.c: In function ‘handle_long_options’:
+options.c:972:3: warning: missing initializer for field ‘prefix’ of ‘struct switches’ [-Wmissing-field-initializers]
+   { "version", handle_version },
+   ^
+options.c:963:15: note: ‘prefix’ declared here
+  unsigned int prefix:1;
+               ^~~~~~
+options.c:973:3: warning: missing initializer for field ‘prefix’ of ‘struct switches’ [-Wmissing-field-initializers]
+   { NULL, NULL }
+   ^
+options.c:963:15: note: ‘prefix’ declared here
+  unsigned int prefix:1;
+               ^~~~~~
+  CC      parse.o
+parse.c:464:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("__thread", &thread_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:465:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("_Thread_local", &thread_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:471:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("typeof", &typeof_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:471:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("typeof", &typeof_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:471:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("typeof", &typeof_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:472:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("__auto_type", &autotype_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:481:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("_Alignas", &alignas_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:483:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  U("attribute", &attribute_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:483:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  U("attribute", &attribute_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:486:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("struct", &struct_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:487:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("union", &union_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:488:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("enum", &enum_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:491:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("char", &char_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:492:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("short", &short_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:493:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("int", &int_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:494:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("long", &long_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:495:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("float", &float_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:496:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("double", &double_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:497:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("signed", &signed_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:497:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("signed", &signed_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:497:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("signed", &signed_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:498:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("unsigned", &unsigned_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:499:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("__int128", &int128_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:515:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("if", &if_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:516:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("return", &return_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:517:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("break", &loop_iter_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:518:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("continue", &loop_iter_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:519:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("default", &default_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:520:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("case", &case_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:521:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("switch", &switch_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:522:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("for", &for_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:523:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("while", &while_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:524:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("do", &do_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:525:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("goto", &goto_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:526:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("asm", &asm_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:526:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("asm", &asm_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:526:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  A("asm", &asm_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:527:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("context", &context_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:528:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("__context__", &__context___op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:529:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("__range__", &range_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:530:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  N("_Static_assert", &static_assert_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:533:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("packed", &packed_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:533:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("packed", &packed_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:534:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("aligned", &aligned_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:534:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("aligned", &aligned_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:540:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("force", &attr_force_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:540:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("force", &attr_force_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:542:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("address_space", &address_space_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:542:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("address_space", &address_space_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:543:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("designated_init", &designated_init_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:543:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("designated_init", &designated_init_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:544:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("transparent_union", &transparent_union_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:544:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("transparent_union", &transparent_union_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:551:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("mode", &mode_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:551:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("mode", &mode_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:552:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("QI", &mode_QI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:552:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("QI", &mode_QI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:553:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("HI", &mode_HI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:553:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("HI", &mode_HI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:554:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("SI", &mode_SI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:554:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("SI", &mode_SI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:555:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("DI", &mode_DI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:555:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("DI", &mode_DI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:556:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("TI", &mode_TI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:556:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("TI", &mode_TI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:557:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("byte", &mode_QI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:557:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("byte", &mode_QI_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:558:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("pointer", &mode_pointer_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:558:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("pointer", &mode_pointer_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:559:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("word", &mode_word_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c:559:2: warning: missing initializer for field ‘type’ of ‘struct init_keyword’ [-Wmissing-field-initializers]
+  D("word", &mode_word_op),
+  ^
+parse.c:448:17: note: ‘type’ declared here
+  struct symbol *type;
+                 ^~~~
+parse.c: In function ‘init_parser’:
+parse.c:593:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(typedefs); i++)
+                ^
+parse.c:595:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(keywords); i++)
+                ^
+parse.c:598:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(ignored_attributes); i++) {
+                ^
+parse.c: In function ‘struct_specifier’:
+parse.c:791:75: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *struct_specifier(struct token *token, struct symbol *sym, struct decl_state *ctx)
+                                                            ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘union_specifier’:
+parse.c:796:74: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *union_specifier(struct token *token, struct symbol *sym, struct decl_state *ctx)
+                                                           ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘enum_specifier’:
+parse.c:1029:73: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *enum_specifier(struct token *token, struct symbol *sym, struct decl_state *ctx)
+                                                          ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘typeof_specifier’:
+parse.c:1040:75: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *typeof_specifier(struct token *token, struct symbol *sym, struct decl_state *ctx)
+                                                            ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘autotype_specifier’:
+parse.c:1066:77: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *autotype_specifier(struct token *token, struct symbol *sym, struct decl_state *ctx)
+                                                              ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘ignore_attribute’:
+parse.c:1073:75: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *ignore_attribute(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                            ~~~~~~~~~~~~~~~^~~~
+parse.c:1073:100: warning: unused parameter ‘ctx’ [-Wunused-parameter]
+ static struct token *ignore_attribute(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                                                 ~~~~~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘attribute_packed’:
+parse.c:1081:75: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_packed(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                            ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘attribute_aligned’:
+parse.c:1103:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  } else if (alignment > ctx->ctype.alignment)
+                       ^
+parse.c:1090:76: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_aligned(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                             ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘attribute_address_space’:
+parse.c:1149:82: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_address_space(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                                   ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘attribute_mode’:
+parse.c:1234:73: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_mode(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                          ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘attribute_context’:
+parse.c:1250:76: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_context(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                             ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘attribute_designated_init’:
+parse.c:1275:84: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_designated_init(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                                     ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘attribute_transparent_union’:
+parse.c:1284:86: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_transparent_union(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                                       ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘attribute_specifier’:
+parse.c:1308:78: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *attribute_specifier(struct token *token, struct symbol *sym, struct decl_state *ctx)
+                                                               ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘thread_specifier’:
+parse.c:1355:74: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *thread_specifier(struct token *next, struct symbol *sym, struct decl_state *ctx)
+                                                           ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘attribute_force’:
+parse.c:1367:74: warning: unused parameter ‘attr’ [-Wunused-parameter]
+ static struct token *attribute_force(struct token *token, struct symbol *attr, struct decl_state *ctx)
+                                                           ~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘alignas_specifier’:
+parse.c:1403:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  if (alignment > ctx->ctype.alignment)
+                ^
+parse.c:1373:76: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static struct token *alignas_specifier(struct token *token, struct symbol *sym, struct decl_state *ctx)
+                                                             ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘handle_asm_name’:
+parse.c:1602:78: warning: unused parameter ‘ctx’ [-Wunused-parameter]
+ static struct token *handle_asm_name(struct token *token, struct decl_state *ctx)
+                                                           ~~~~~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘parse_asm_operands’:
+parse.c:1946:80: warning: unused parameter ‘stmt’ [-Wunused-parameter]
+ static struct token *parse_asm_operands(struct token *token, struct statement *stmt, struct asm_operand_list **inout)
+                                                              ~~~~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘parse_asm_clobbers’:
+parse.c:1966:80: warning: unused parameter ‘stmt’ [-Wunused-parameter]
+ static struct token *parse_asm_clobbers(struct token *token, struct statement *stmt, struct expression_list **clobbers)
+                                                              ~~~~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘parse_asm_labels’:
+parse.c:1978:78: warning: unused parameter ‘stmt’ [-Wunused-parameter]
+ static struct token *parse_asm_labels(struct token *token, struct statement *stmt, struct symbol_list **labels)
+                                                            ~~~~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘parse_static_assert’:
+parse.c:2021:84: warning: unused parameter ‘unused’ [-Wunused-parameter]
+ static struct token *parse_static_assert(struct token *token, struct symbol_list **unused)
+                                                               ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+parse.c: In function ‘end_iterator’:
+parse.c:2089:44: warning: unused parameter ‘stmt’ [-Wunused-parameter]
+ static void end_iterator(struct statement *stmt)
+                          ~~~~~~~~~~~~~~~~~~^~~~
+parse.c: In function ‘end_function’:
+parse.c:2114:41: warning: unused parameter ‘sym’ [-Wunused-parameter]
+ static void end_function(struct symbol *sym)
+                          ~~~~~~~~~~~~~~~^~~
+parse.c: In function ‘declare_argument’:
+parse.c:2674:65: warning: unused parameter ‘fn’ [-Wunused-parameter]
+ static void declare_argument(struct symbol *sym, struct symbol *fn)
+                                                  ~~~~~~~~~~~~~~~^~
+parse.c: In function ‘toplevel_asm_declaration’:
+parse.c:2826:89: warning: unused parameter ‘list’ [-Wunused-parameter]
+ static struct token *toplevel_asm_declaration(struct token *token, struct symbol_list **list)
+                                                                    ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      predefine.o
+  CC      pre-process.o
+pre-process.c: In function ‘do_handle_define’:
+pre-process.c:1464:44: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int do_handle_define(struct stream *stream, struct token **line, struct token *token, int attr)
+                             ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1464:67: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int do_handle_define(struct stream *stream, struct token **line, struct token *token, int attr)
+                                                    ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘do_handle_undef’:
+pre-process.c:1508:43: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int do_handle_undef(struct stream *stream, struct token **line, struct token *token, int attr)
+                            ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1508:66: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int do_handle_undef(struct stream *stream, struct token **line, struct token *token, int attr)
+                                                   ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_ifdef’:
+pre-process.c:1560:63: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_ifdef(struct stream *stream, struct token **line, struct token *token)
+                                                ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_ifndef’:
+pre-process.c:1575:64: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_ifndef(struct stream *stream, struct token **line, struct token *token)
+                                                 ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_if’:
+pre-process.c:1662:60: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_if(struct stream *stream, struct token **line, struct token *token)
+                                             ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_elif’:
+pre-process.c:1672:62: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_elif(struct stream *stream, struct token **line, struct token *token)
+                                               ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_else’:
+pre-process.c:1705:62: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_else(struct stream *stream, struct token **line, struct token *token)
+                                               ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_endif’:
+pre-process.c:1730:63: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_endif(struct stream *stream, struct token **line, struct token *token)
+                                                ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_warning’:
+pre-process.c:1746:42: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_warning(struct stream *stream, struct token **line, struct token *token)
+                           ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1746:65: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_warning(struct stream *stream, struct token **line, struct token *token)
+                                                  ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_error’:
+pre-process.c:1752:40: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_error(struct stream *stream, struct token **line, struct token *token)
+                         ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1752:63: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_error(struct stream *stream, struct token **line, struct token *token)
+                                                ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_nostdinc’:
+pre-process.c:1758:43: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_nostdinc(struct stream *stream, struct token **line, struct token *token)
+                            ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1758:66: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_nostdinc(struct stream *stream, struct token **line, struct token *token)
+                                                   ~~~~~~~~~~~~~~~^~~~
+pre-process.c:1758:86: warning: unused parameter ‘token’ [-Wunused-parameter]
+ static int handle_nostdinc(struct stream *stream, struct token **line, struct token *token)
+                                                                        ~~~~~~~~~~~~~~^~~~~
+pre-process.c: In function ‘handle_add_include’:
+pre-process.c:1834:46: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_add_include(struct stream *stream, struct token **line, struct token *token)
+                               ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1834:69: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_add_include(struct stream *stream, struct token **line, struct token *token)
+                                                      ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_add_isystem’:
+pre-process.c:1848:46: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_add_isystem(struct stream *stream, struct token **line, struct token *token)
+                               ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1848:69: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_add_isystem(struct stream *stream, struct token **line, struct token *token)
+                                                      ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_add_system’:
+pre-process.c:1862:45: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_add_system(struct stream *stream, struct token **line, struct token *token)
+                              ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1862:68: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_add_system(struct stream *stream, struct token **line, struct token *token)
+                                                     ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_add_dirafter’:
+pre-process.c:1893:47: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_add_dirafter(struct stream *stream, struct token **line, struct token *token)
+                                ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1893:70: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_add_dirafter(struct stream *stream, struct token **line, struct token *token)
+                                                       ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘handle_split_include’:
+pre-process.c:1907:48: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_split_include(struct stream *stream, struct token **line, struct token *token)
+                                 ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1907:71: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_split_include(struct stream *stream, struct token **line, struct token *token)
+                                                        ~~~~~~~~~~~~~~~^~~~
+pre-process.c:1907:91: warning: unused parameter ‘token’ [-Wunused-parameter]
+ static int handle_split_include(struct stream *stream, struct token **line, struct token *token)
+                                                                             ~~~~~~~~~~~~~~^~~~~
+pre-process.c: In function ‘handle_line’:
+pre-process.c:1958:39: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_line(struct stream *stream, struct token **line, struct token *token)
+                        ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1958:62: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_line(struct stream *stream, struct token **line, struct token *token)
+                                               ~~~~~~~~~~~~~~~^~~~
+pre-process.c:1958:82: warning: unused parameter ‘token’ [-Wunused-parameter]
+ static int handle_line(struct stream *stream, struct token **line, struct token *token)
+                                                                    ~~~~~~~~~~~~~~^~~~~
+pre-process.c: In function ‘handle_ident’:
+pre-process.c:1963:40: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_ident(struct stream *stream, struct token **line, struct token *token)
+                         ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1963:63: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_ident(struct stream *stream, struct token **line, struct token *token)
+                                                ~~~~~~~~~~~~~~~^~~~
+pre-process.c:1963:83: warning: unused parameter ‘token’ [-Wunused-parameter]
+ static int handle_ident(struct stream *stream, struct token **line, struct token *token)
+                                                                     ~~~~~~~~~~~~~~^~~~~
+pre-process.c: In function ‘handle_nondirective’:
+pre-process.c:1968:47: warning: unused parameter ‘stream’ [-Wunused-parameter]
+ static int handle_nondirective(struct stream *stream, struct token **line, struct token *token)
+                                ~~~~~~~~~~~~~~~^~~~~~
+pre-process.c:1968:70: warning: unused parameter ‘line’ [-Wunused-parameter]
+ static int handle_nondirective(struct stream *stream, struct token **line, struct token *token)
+                                                       ~~~~~~~~~~~~~~~^~~~
+pre-process.c: In function ‘init_preprocessor’:
+pre-process.c:2127:3: warning: missing initializer for field ‘expand’ of ‘struct <anonymous>’ [-Wmissing-field-initializers]
+   { "__LINE__", expand_line },
+   ^
+pre-process.c:2125:10: note: ‘expand’ declared here
+   bool (*expand)(struct token *, struct arg * args);
+          ^~~~~~
+pre-process.c:2128:3: warning: missing initializer for field ‘expand’ of ‘struct <anonymous>’ [-Wmissing-field-initializers]
+   { "__FILE__", expand_file },
+   ^
+pre-process.c:2125:10: note: ‘expand’ declared here
+   bool (*expand)(struct token *, struct arg * args);
+          ^~~~~~
+pre-process.c:2129:3: warning: missing initializer for field ‘expand’ of ‘struct <anonymous>’ [-Wmissing-field-initializers]
+   { "__BASE_FILE__", expand_basefile },
+   ^
+pre-process.c:2125:10: note: ‘expand’ declared here
+   bool (*expand)(struct token *, struct arg * args);
+          ^~~~~~
+pre-process.c:2130:3: warning: missing initializer for field ‘expand’ of ‘struct <anonymous>’ [-Wmissing-field-initializers]
+   { "__DATE__", expand_date },
+   ^
+pre-process.c:2125:10: note: ‘expand’ declared here
+   bool (*expand)(struct token *, struct arg * args);
+          ^~~~~~
+pre-process.c:2131:3: warning: missing initializer for field ‘expand’ of ‘struct <anonymous>’ [-Wmissing-field-initializers]
+   { "__TIME__", expand_time },
+   ^
+pre-process.c:2125:10: note: ‘expand’ declared here
+   bool (*expand)(struct token *, struct arg * args);
+          ^~~~~~
+pre-process.c:2132:3: warning: missing initializer for field ‘expand’ of ‘struct <anonymous>’ [-Wmissing-field-initializers]
+   { "__COUNTER__", expand_counter },
+   ^
+pre-process.c:2125:10: note: ‘expand’ declared here
+   bool (*expand)(struct token *, struct arg * args);
+          ^~~~~~
+pre-process.c:2133:3: warning: missing initializer for field ‘expand’ of ‘struct <anonymous>’ [-Wmissing-field-initializers]
+   { "__INCLUDE_LEVEL__", expand_include_level },
+   ^
+pre-process.c:2125:10: note: ‘expand’ declared here
+   bool (*expand)(struct token *, struct arg * args);
+          ^~~~~~
+pre-process.c:2140:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(normal); i++) {
+                ^
+pre-process.c:2146:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(special); i++) {
+                ^
+pre-process.c:2152:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(dynamic); i++) {
+                ^
+pre-process.c: In function ‘combine’:
+pre-process.c:526:8: warning: this statement may fall through [-Wimplicit-fallthrough=]
+     if (strchr("eEpP", p[len - 2]))
+        ^
+pre-process.c:528:4: note: here
+    default:
+    ^~~~~~~
+  CC      ptrlist.o
+  CC      ptrmap.o
+  CC      scope.o
+  CC      show-parse.o
+show-parse.c: In function ‘show_modifiers’:
+show-parse.c:147:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(mod_names); i++) {
+                ^
+show-parse.c:152:44: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+    while ((c = *name++) != '\0' && len + 2 < sizeof buffer)
+                                            ^
+show-parse.c: In function ‘builtin_typename’:
+show-parse.c:277:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(typenames); i++)
+                ^
+show-parse.c: In function ‘builtin_type_suffix’:
+show-parse.c:287:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(typenames); i++)
+                ^
+show-parse.c: In function ‘builtin_ctypename’:
+show-parse.c:297:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(typenames); i++)
+                ^
+show-parse.c: In function ‘show_load_gen’:
+show-parse.c:853:55: warning: unused parameter ‘expr’ [-Wunused-parameter]
+ static int show_load_gen(int bits, struct expression *expr, int addr)
+                                    ~~~~~~~~~~~~~~~~~~~^~~~
+show-parse.c: In function ‘show_store_gen’:
+show-parse.c:861:68: warning: unused parameter ‘expr’ [-Wunused-parameter]
+ static void show_store_gen(int bits, int value, struct expression *expr, int addr)
+                                                 ~~~~~~~~~~~~~~~~~~~^~~~
+  CC      simplify.o
+simplify.c: In function ‘is_same_op’:
+simplify.c:457:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  if (def->orig_type->bit_size != osize)
+                               ^~
+simplify.c: In function ‘simplify_compare_constant’:
+simplify.c:1188:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_bit(size)) // (x <  SMIN) --> 0
+             ^~
+simplify.c:1190:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_mask(size)) // (x <  SMAX) --> (x != SMAX)
+             ^~
+simplify.c:1192:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_bit(size) + 1) // (x < SMIN + 1) --> (x == SMIN)
+             ^~
+simplify.c:1200:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_mask(size)) // (x <= SMAX) --> 1
+             ^~
+simplify.c:1202:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_bit(size)) // (x <= SMIN) --> (x == SMIN)
+             ^~
+simplify.c:1204:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_mask(size) - 1) // (x <= SMAX - 1) --> (x != SMAX)
+             ^~
+simplify.c:1212:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_bit(size)) // (x >= SMIN) --> 1
+             ^~
+simplify.c:1214:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_mask(size)) // (x >= SMAX) --> (x == SMAX)
+             ^~
+simplify.c:1216:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_bit(size) + 1) // (x >= SMIN + 1) --> (x != SMIN)
+             ^~
+simplify.c:1224:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_mask(size)) // (x >  SMAX) --> 0
+             ^~
+simplify.c:1226:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_bit(size)) // (x >  SMIN) --> (x != SMIN)
+             ^~
+simplify.c:1228:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == sign_mask(size) - 1) // (x > SMAX - 1) --> (x == SMAX)
+             ^~
+simplify.c:1239:18: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   else if (value == bits) // (x < ~0) --> (x != ~0)
+                  ^~
+simplify.c:1249:18: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   else if (value == bits) // (x >= ~0) --> (x == ~0)
+                  ^~
+simplify.c:1257:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == bits) // (x <= ~0) --> 1
+             ^~
+simplify.c:1259:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == (bits - 1)) // (x <= ~1) --> (x != ~0)
+             ^~
+simplify.c:1261:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == (bits >> 1)) // (x u<= SMAX) --> (x s>= 0)
+             ^~
+simplify.c:1267:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == bits) // (x > ~0) --> 0
+             ^~
+simplify.c:1269:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == (bits - 1)) // (x > ~1) --> (x == ~0)
+             ^~
+simplify.c:1271:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value == (bits >> 1)) // (x u> SMAX) --> (x s< 0)
+             ^~
+simplify.c:1286:23: warning: comparison of integer expressions of different signedness: ‘long long unsigned int’ and ‘long long int’ [-Wsign-compare]
+    if ((value & bits) != value)
+                       ^~
+simplify.c:1288:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value == bits && is_power_of_2(bits))
+              ^~
+simplify.c:1292:23: warning: comparison of integer expressions of different signedness: ‘long long unsigned int’ and ‘long long int’ [-Wsign-compare]
+    if ((value & bits) != value)
+                       ^~
+simplify.c:1294:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value == bits && is_power_of_2(bits))
+              ^~
+simplify.c:1326:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value > bits)
+              ^
+simplify.c:1330:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value >= bits)
+              ^~
+simplify.c:1334:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value > bits)
+              ^
+simplify.c:1338:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value >= bits)
+              ^~
+simplify.c:1357:13: warning: comparison of integer expressions of different signedness: ‘long long unsigned int’ and ‘long long int’ [-Wsign-compare]
+    if (bits >= value)
+             ^~
+simplify.c:1361:13: warning: comparison of integer expressions of different signedness: ‘long long unsigned int’ and ‘long long int’ [-Wsign-compare]
+    if (bits > value)
+             ^
+simplify.c:1365:13: warning: comparison of integer expressions of different signedness: ‘long long unsigned int’ and ‘long long int’ [-Wsign-compare]
+    if (bits > value)
+             ^
+simplify.c:1369:13: warning: comparison of integer expressions of different signedness: ‘long long unsigned int’ and ‘long long int’ [-Wsign-compare]
+    if (bits >= value)
+             ^~
+simplify.c:1401:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value >= sign_bit(osize)) {
+              ^~
+simplify.c:1408:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value >= sign_bit(osize)) {
+              ^~
+simplify.c:1416:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value < sign_bit(size))
+              ^
+simplify.c:1423:14: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+    if (value < sign_bit(size))
+              ^
+simplify.c:1448:13: warning: comparison of integer expressions of different signedness: ‘long long int’ and ‘long long unsigned int’ [-Wsign-compare]
+   if (value <= bits) {
+             ^~
+simplify.c:1373:10: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    value -= 1;
+    ~~~~~~^~~~
+simplify.c:1374:3: note: here
+   case OP_SET_LE:
+   ^~~~
+simplify.c:1382:10: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    value -= 1;
+    ~~~~~~^~~~
+simplify.c:1383:3: note: here
+   case OP_SET_GT:
+   ^~~~
+simplify.c: In function ‘simplify_binop_same_args’:
+simplify.c:1684:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (Wtautological_compare)
+      ^
+simplify.c:1686:2: note: here
+  case OP_SUB:
+  ^~~~
+simplify.c: In function ‘simplify_cast’:
+simplify.c:2331:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    if (val->value & (1 << (def->size - 1)))
+       ^
+simplify.c:2334:3: note: here
+   case OP_ZEXT:
+   ^~~~
+simplify.c: In function ‘simplify_select’:
+simplify.c:2525:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (constant(def->src2) && constant(def->src3)) {
+      ^
+simplify.c:2545:2: note: here
+  case OP_AND:
+  ^~~~
+  CC      sort.o
+  CC      ssa.o
+ssa.c: In function ‘rewrite_local_var’:
+ssa.c:96:74: warning: unused parameter ‘nbr_stores’ [-Wunused-parameter]
+ static void rewrite_local_var(struct basic_block *bb, pseudo_t addr, int nbr_stores, int nbr_uses)
+                                                                      ~~~~^~~~~~~~~~
+ssa.c:96:90: warning: unused parameter ‘nbr_uses’ [-Wunused-parameter]
+ static void rewrite_local_var(struct basic_block *bb, pseudo_t addr, int nbr_stores, int nbr_uses)
+                                                                                      ~~~~^~~~~~~~
+ssa.c: In function ‘ssa_rename_phis’:
+ssa.c:345:48: warning: unused parameter ‘ep’ [-Wunused-parameter]
+ static void ssa_rename_phis(struct entrypoint *ep)
+                             ~~~~~~~~~~~~~~~~~~~^~
+  CC      stats.o
+  CC      storage.o
+storage.c: In function ‘set_up_argument_storage’:
+storage.c:248:56: warning: unused parameter ‘ep’ [-Wunused-parameter]
+ static void set_up_argument_storage(struct entrypoint *ep, struct basic_block *bb)
+                                     ~~~~~~~~~~~~~~~~~~~^~
+  CC      symbol.o
+symbol.c: In function ‘lay_out_union’:
+symbol.c:104:20: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  if (sym->bit_size > info->bit_size)
+                    ^
+symbol.c: In function ‘count_array_initializer’:
+symbol.c:405:24: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+      if (entry->idx_to >= nr)
+                        ^~
+symbol.c:408:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+     case EXPR_PREOP:{
+                     ^
+symbol.c:422:5: note: here
+     default:
+     ^~~~~~~
+symbol.c: In function ‘is_wstring_expr’:
+symbol.c:368:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    if (expr->op == '(') {
+       ^
+symbol.c:372:3: note: here
+   default:
+   ^~~~~~~
+  CC      target.o
+  CC      target-alpha.o
+target-alpha.c: In function ‘predefine_alpha’:
+target-alpha.c:6:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_alpha(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-alpha.c: At top level:
+target-alpha.c:13:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alpha_cmpbge", &long_ctype, 0, { &long_ctype, &long_ctype} },
+  ^
+In file included from target-alpha.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-alpha.c:14:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alpha_extbl", &long_ctype, 0, { &long_ctype, &long_ctype} },
+  ^
+In file included from target-alpha.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-alpha.c:15:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alpha_extwl", &long_ctype, 0, { &long_ctype, &long_ctype} },
+  ^
+In file included from target-alpha.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-alpha.c:16:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alpha_insbl", &long_ctype, 0, { &long_ctype, &long_ctype} },
+  ^
+In file included from target-alpha.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-alpha.c:17:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alpha_inslh", &long_ctype, 0, { &long_ctype, &long_ctype} },
+  ^
+In file included from target-alpha.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-alpha.c:18:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alpha_insql", &long_ctype, 0, { &long_ctype, &long_ctype} },
+  ^
+In file included from target-alpha.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-alpha.c:19:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_alpha_inswl", &long_ctype, 0, { &long_ctype, &long_ctype} },
+  ^
+In file included from target-alpha.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+  CC      target-arm.o
+target-arm.c: In function ‘init_arm’:
+target-arm.c:5:43: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_arm(const struct target *self)
+                      ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-arm.c: In function ‘predefine_arm’:
+target-arm.c:20:48: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_arm(const struct target *self)
+                           ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-arm64.o
+target-arm64.c: In function ‘init_arm64’:
+target-arm64.c:5:45: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_arm64(const struct target *self)
+                        ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-arm64.c: In function ‘predefine_arm64’:
+target-arm64.c:11:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_arm64(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-bfin.o
+target-bfin.c: In function ‘predefine_bfin’:
+target-bfin.c:6:49: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_bfin(const struct target *self)
+                            ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-bfin.c: At top level:
+target-bfin.c:13:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_bfin_csync", &void_ctype, 0 },
+  ^
+In file included from target-bfin.c:4:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+target-bfin.c:14:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_bfin_ssync", &void_ctype, 0 },
+  ^
+In file included from target-bfin.c:4:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+target-bfin.c:15:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_bfin_norm_fr1x32", &int_ctype, 0, { &int_ctype} },
+  ^
+In file included from target-bfin.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+  CC      target-default.o
+  CC      target-h8300.o
+target-h8300.c: In function ‘init_h8300’:
+target-h8300.c:5:45: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_h8300(const struct target *self)
+                        ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-h8300.c: In function ‘predefine_h8300’:
+target-h8300.c:19:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_h8300(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-m68k.o
+target-m68k.c: In function ‘init_m68k’:
+target-m68k.c:5:44: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_m68k(const struct target *self)
+                       ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-m68k.c: In function ‘predefine_m68k’:
+target-m68k.c:13:49: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_m68k(const struct target *self)
+                            ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-microblaze.o
+target-microblaze.c: In function ‘init_microblaze’:
+target-microblaze.c:5:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_microblaze(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-microblaze.c: In function ‘predefine_microblaze’:
+target-microblaze.c:13:55: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_microblaze(const struct target *self)
+                                  ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-mips.o
+target-mips.c: In function ‘predefine_mips’:
+target-mips.c:5:49: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_mips(const struct target *self)
+                            ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-nds32.o
+target-nds32.c: In function ‘init_nds32’:
+target-nds32.c:5:45: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_nds32(const struct target *self)
+                        ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-nds32.c: In function ‘predefine_nds32’:
+target-nds32.c:15:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_nds32(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-nios2.o
+target-nios2.c: In function ‘init_nios2’:
+target-nios2.c:6:45: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_nios2(const struct target *self)
+                        ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-nios2.c: In function ‘predefine_nios2’:
+target-nios2.c:14:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_nios2(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-nios2.c: At top level:
+target-nios2.c:31:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_rdctl", &int_ctype, 0, { &int_ctype} },
+  ^
+In file included from target-nios2.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-nios2.c:32:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_wrctl", &void_ctype, 0, { &int_ctype, &int_ctype} },
+  ^
+In file included from target-nios2.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+target-nios2.c:33:2: warning: missing initializer for field ‘_args_null_tail’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_custom_ini", &int_ctype, 0, { &int_ctype} },
+  ^
+In file included from target-nios2.c:4:
+builtin.h:11:17: note: ‘_args_null_tail’ declared here
+  struct symbol *_args_null_tail;
+                 ^~~~~~~~~~~~~~~
+  CC      target-openrisc.o
+target-openrisc.c: In function ‘init_openrisc’:
+target-openrisc.c:5:48: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_openrisc(const struct target *self)
+                           ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-openrisc.c: In function ‘predefine_openrisc’:
+target-openrisc.c:15:53: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_openrisc(const struct target *self)
+                                ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-ppc.o
+target-ppc.c: In function ‘predefine_ppc’:
+target-ppc.c:6:48: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_ppc(const struct target *self)
+                           ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-ppc.c: In function ‘init_ppc32’:
+target-ppc.c:32:45: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_ppc32(const struct target *self)
+                        ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-riscv.o
+target-riscv.c: In function ‘parse_march_riscv’:
+target-riscv.c:53:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(basic_sets); i++) {
+                ^
+target-riscv.c:66:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  for (i = 0; i < ARRAY_SIZE(extensions); i++) {
+                ^
+target-riscv.c: In function ‘predefine_riscv’:
+target-riscv.c:100:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_riscv(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-s390.o
+target-s390.c: In function ‘init_s390’:
+target-s390.c:6:44: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_s390(const struct target *self)
+                       ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-s390.c: In function ‘predefine_s390’:
+target-s390.c:17:49: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_s390(const struct target *self)
+                            ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-sh.o
+target-sh.c: In function ‘init_sh’:
+target-sh.c:5:42: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_sh(const struct target *self)
+                     ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-sh.c: In function ‘predefine_sh’:
+target-sh.c:20:47: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_sh(const struct target *self)
+                          ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      target-sparc.o
+target-sparc.c: In function ‘predefine_sparc’:
+target-sparc.c:7:50: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_sparc(const struct target *self)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-sparc.c: In function ‘init_sparc32’:
+target-sparc.c:18:47: warning: unused parameter ‘target’ [-Wunused-parameter]
+ static void init_sparc32(const struct target *target)
+                          ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+target-sparc.c: In function ‘init_sparc64’:
+target-sparc.c:59:47: warning: unused parameter ‘target’ [-Wunused-parameter]
+ static void init_sparc64(const struct target *target)
+                          ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+  CC      target-x86.o
+target-x86.c: In function ‘predefine_i386’:
+target-x86.c:6:49: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_i386(const struct target *self)
+                            ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-x86.c: In function ‘predefine_x86_64’:
+target-x86.c:13:51: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_x86_64(const struct target *self)
+                              ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-x86.c: In function ‘init_x86_common’:
+target-x86.c:21:50: warning: unused parameter ‘target’ [-Wunused-parameter]
+ static void init_x86_common(const struct target *target)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+target-x86.c: At top level:
+target-x86.c:42:2: warning: missing initializer for field ‘args’ of ‘const struct builtin_fn’ [-Wmissing-field-initializers]
+  { "__builtin_ia32_pause", &void_ctype, 0, },
+  ^
+In file included from target-x86.c:4:
+builtin.h:10:17: note: ‘args’ declared here
+  struct symbol *args[6];
+                 ^~~~
+  CC      target-xtensa.o
+target-xtensa.c: In function ‘init_xtensa’:
+target-xtensa.c:5:46: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void init_xtensa(const struct target *self)
+                         ~~~~~~~~~~~~~~~~~~~~~^~~~
+target-xtensa.c: In function ‘predefine_xtensa’:
+target-xtensa.c:15:51: warning: unused parameter ‘self’ [-Wunused-parameter]
+ static void predefine_xtensa(const struct target *self)
+                              ~~~~~~~~~~~~~~~~~~~~~^~~~
+  CC      tokenize.o
+tokenize.c: In function ‘get_one_identifier’:
+tokenize.c:912:11: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   if (len >= sizeof(buf))
+           ^~
+  CC      unssa.o
+unssa.c: In function ‘replace_phi_node’:
+unssa.c:100:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    insn->target = tmp;
+    ~~~~~~~~~~~~~^~~~~
+unssa.c:101:3: note: here
+   case 0:
+   ^~~~
+  CC      utils.o
+  CC      version.o
+  AR      libsparse.a
+  LD      sparsegv
+gcc --version
+gcc (Debian 8.3.0-6) 8.3.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+end of make
