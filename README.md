@@ -18,6 +18,7 @@ For every function in every file a small graph is generated with the basic block
 In the directory docs are the sparse 0.6.3 documents from the website as pdf files  
 In directory examples is example graph output and svg callgraph images generated with sparsegv  
 In directory orig is the snapshot of the sparse tool july 2021 version 0.6.3  
+In directory gcc-11.1-callinfo is a gcc patch to generate callgraph images during compilation  
   
 The sparse tool has a MIT license and the graph layout routines are GNU GPL version 3+  
   
