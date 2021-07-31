@@ -33,8 +33,14 @@ Links:
 https://sparse.docs.kernel.org/en/latest/  
 https://www.kernel.org/doc/html/v4.12/dev-tools/sparse.html  
 https://mirrors.edge.kernel.org/pub/software/devel/sparse/dist/  
-git clone git://git.kernel.org/pub/scm/devel/sparse/sparse.git  
+the sparse maillinglist is the place to ask questions about sparse tool  
+and the maillinglist has the description of details of the sparse C source  
+   
+graph viewer for dot files with GTK+ gui  
 https://sourceforge.net/projects/gml4gtk/  
+  
+for windows compilation there is w64devkit with newest gcc compiler  
+https://github.com/skeeto/w64devkit  
   
 Todo:
 generate textual gml graph files to be used with tulip, ogdf. networkx, graphia, gephi, graph-tool, graphlet, igraph and more  
